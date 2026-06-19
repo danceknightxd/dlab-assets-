@@ -1,0 +1,5690 @@
+/* ══════════ the-schedule-you-never-agreed-to.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  /* Blogger injects its own white-background wrapper divs
+     between <body> and our content. Force every possible
+     wrapper dark so nothing white can show through. */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .article{
+    background:#0a0a0a!important;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background: radial-gradient(ellipse at 40% 60%, #3a0a0a 0%, #1a0505 45%, #0a0a0a 100%)!important;
+    padding: 80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 60px,
+        rgba(255,255,255,0.012) 60px,
+        rgba(255,255,255,0.012) 61px
+      );
+    pointer-events:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:2px;
+    margin-bottom:28px;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(60px,12vw,118px);
+    line-height:0.88;
+    color:#ffffff!important;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:28px;
+    position:relative;
+    z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;
+    font-weight:300;
+    color:#ffffff!important;
+    max-width:660px;
+    margin:0 auto 32px;
+    line-height:1.6;
+    opacity:0.92;
+  }
+  .hero-byline{
+    font-size:13px;
+    letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;
+    text-transform:uppercase;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;
+    border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;
+    flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── BODY ──────────────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT: THE PHANTOM SCHEDULE ───────── */
+  /* A visual timeline comparing "The Schedule You Absorbed" vs "Your Actual Arc" */
+  .timeline-wrap{
+    margin:44px 0;
+    position:relative;
+  }
+  .timeline-title{
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:2px;color:#e74c3c!important;
+    text-transform:uppercase;margin-bottom:20px;
+  }
+  .timeline-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+  }
+  .timeline-col-header{
+    padding:14px 20px;
+    font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    border-bottom:2px solid;
+  }
+  .timeline-col-header.absorbed{
+    background:#1a1a1a!important;
+    color:rgba(255,255,255,0.4)!important;
+    border-color:#333;
+  }
+  .timeline-col-header.actual{
+    background:#1a0505!important;
+    color:#e74c3c!important;
+    border-color:#c0392b;
+  }
+  .timeline-age{
+    display:flex;
+    gap:2px;
+  }
+  .timeline-cell{
+    flex:1;
+    padding:16px 20px;
+    border-bottom:1px solid #161616;
+    position:relative;
+  }
+  .timeline-cell.absorbed-cell{
+    background:#0f0f0f!important;
+  }
+  .timeline-cell.actual-cell{
+    background:#100808!important;
+  }
+  .age-label{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;
+    line-height:1;
+    display:block;
+    margin-bottom:4px;
+  }
+  .age-label.absorbed-age{color:rgba(255,255,255,0.2)!important;}
+  .age-label.actual-age{color:#c0392b!important;}
+  .cell-text{
+    font-size:13px;
+    line-height:1.5;
+  }
+  .cell-text.absorbed-text{
+    color:rgba(255,255,255,0.35)!important;
+    font-style:italic;
+    text-decoration:line-through;
+    text-decoration-color:rgba(255,255,255,0.15);
+  }
+  .cell-text.actual-text{
+    color:rgba(255,255,255,0.75)!important;
+  }
+  .timeline-note{
+    margin-top:14px;
+    font-size:12px;
+    color:rgba(255,255,255,0.25)!important;
+    text-align:center;
+    font-style:italic;
+    letter-spacing:0.3px;
+  }
+
+  /* ─── UNIQUE ELEMENT: THE BORROWED METRICS DIAL ───── */
+  /* Shows whose voice is behind common "behind" feelings */
+  .voices-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .voices-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;
+    color:#e74c3c!important;
+  }
+  .voices-subtitle{
+    font-size:11px;color:rgba(255,255,255,0.3)!important;
+    letter-spacing:1px;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;display:block;text-transform:uppercase;
+  }
+  .voice-row{
+    display:flex;align-items:center;
+    padding:16px 24px;
+    border-bottom:1px solid #161616;
+    gap:16px;
+  }
+  .voice-row:last-child{border-bottom:none;}
+  .voice-thought{
+    flex:1;
+    font-size:14px;color:rgba(255,255,255,0.6)!important;
+    font-style:italic;
+    line-height:1.4;
+  }
+  .voice-arrow{
+    font-size:18px;color:#c0392b!important;flex-shrink:0;
+  }
+  .voice-source{
+    width:180px;flex-shrink:0;
+    font-size:12px;font-weight:600;letter-spacing:0.5px;
+    color:rgba(255,255,255,0.85)!important;
+    text-align:right;
+    line-height:1.4;
+  }
+  .voice-source span{
+    display:block;font-size:10px;
+    color:rgba(255,255,255,0.3)!important;
+    font-weight:400;margin-top:2px;letter-spacing:1px;text-transform:uppercase;
+  }
+
+  /* ─── FULL-BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(40px,8vw,78px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:640px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .timeline-cols{grid-template-columns:1fr;}
+    .timeline-age{flex-direction:column;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .voice-source{width:130px;}
+  }
+
+/* ══════════ purpose-is-a-direction.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 50% 60%, #3a0a0a 0%, #1a0505 40%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    min-height:520px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  /* Compass rose watermark */
+  .hero::before{
+    content:'';
+    position:absolute;
+    width:560px;height:560px;
+    border-radius:50%;
+    border:1px solid rgba(192,57,43,0.05);
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    box-shadow:
+      0 0 0 80px rgba(192,57,43,0.03),
+      0 0 0 160px rgba(192,57,43,0.015),
+      0 0 0 260px rgba(192,57,43,0.007);
+    pointer-events:none;
+  }
+  /* N marker on compass */
+  .hero::after{
+    content:'N';
+    position:absolute;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:220px;
+    color:rgba(192,57,43,0.05)!important;
+    top:50%;left:50%;
+    transform:translate(-50%,-62%);
+    pointer-events:none;
+    user-select:none;
+    letter-spacing:-8px;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(56px,10vw,108px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── STEPS ─────────────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE THREE MYTHS VS REALITY ── */
+  /* Each myth gets a card that "flips" visually — myth on top, reality below */
+  .myths-wrap{
+    margin:44px 0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .myth-card{
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .myth-top{
+    display:flex;
+    align-items:stretch;
+  }
+  .myth-badge{
+    background:linear-gradient(180deg,#1a0505,#2a0808)!important;
+    border-right:2px solid #c0392b;
+    padding:20px 18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:80px;
+    flex-shrink:0;
+  }
+  .myth-badge-word{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:13px;letter-spacing:3px;
+    color:#c0392b!important;
+    text-transform:uppercase;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+  }
+  .myth-content{
+    padding:20px 22px;
+    flex:1;
+  }
+  .myth-statement{
+    font-size:18px;font-weight:600;
+    color:rgba(255,255,255,0.45)!important;
+    font-style:italic;
+    margin-bottom:0;
+    text-decoration:line-through;
+    text-decoration-color:rgba(192,57,43,0.35);
+  }
+  .myth-divider{
+    height:1px;
+    background:linear-gradient(90deg,#c0392b,transparent)!important;
+    margin:0;
+  }
+  .myth-reality{
+    display:flex;
+    align-items:stretch;
+  }
+  .reality-badge{
+    background:linear-gradient(180deg,#0a1a0a,#0f2a0f)!important;
+    border-right:2px solid #27ae60;
+    padding:20px 18px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-width:80px;
+    flex-shrink:0;
+  }
+  .reality-badge-word{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:13px;letter-spacing:3px;
+    color:#27ae60!important;
+    text-transform:uppercase;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+  }
+  .reality-content{
+    padding:18px 22px;
+    flex:1;
+    background:#101510!important;
+  }
+  .reality-text{
+    font-size:15px;
+    color:rgba(255,255,255,0.8)!important;
+    line-height:1.65;
+    margin:0;
+  }
+
+  /* ─── UNIQUE ELEMENT 2: THE PURPOSE SIGNAL TRACKER ── */
+  /* A table mapping four "signals" of emerging purpose — what to watch for */
+  .signal-tracker{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .signal-tracker-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .signal-tracker-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .signal-header{
+    display:grid;
+    grid-template-columns:160px 1fr 1fr;
+    background:#151515!important;
+    border-bottom:1px solid #252525;
+  }
+  .signal-header div{
+    padding:12px 18px;
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-right:1px solid #1e1e1e;
+  }
+  .signal-header div:last-child{border-right:none;}
+  .signal-row{
+    display:grid;
+    grid-template-columns:160px 1fr 1fr;
+    border-bottom:1px solid #161616;
+  }
+  .signal-row:last-child{border-bottom:none;}
+  .signal-cell{
+    padding:16px 18px;
+    font-size:13px;
+    line-height:1.6;
+    border-right:1px solid #161616;
+    color:rgba(255,255,255,0.65)!important;
+  }
+  .signal-cell:last-child{border-right:none;}
+  .signal-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:1px;
+    color:#e74c3c!important;
+    display:block;
+    margin-bottom:4px;
+  }
+  .signal-sub{
+    font-size:11px;letter-spacing:1px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;
+  }
+  .signal-question{
+    font-size:13px;
+    color:rgba(255,255,255,0.5)!important;
+    font-style:italic;
+    margin-bottom:8px;
+    display:block;
+  }
+  .signal-desc{
+    font-size:13px;
+    color:rgba(255,255,255,0.7)!important;
+    line-height:1.55;
+  }
+
+  /* ─── UNIQUE ELEMENT 3: THE PURPOSE ARCHAEOLOGY TIMELINE ── */
+  /* A horizontal dig — going back through layers of time to find recurring themes */
+  .archaeology-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .archaeology-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .archaeology-title span{
+    display:block;font-size:11px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .archaeology-body{
+    padding:0;
+  }
+  .arch-layer{
+    display:flex;
+    align-items:stretch;
+    border-bottom:1px solid #161616;
+    position:relative;
+  }
+  .arch-layer:last-child{border-bottom:none;}
+  .arch-era{
+    width:130px;
+    flex-shrink:0;
+    padding:20px 18px;
+    border-right:1px solid #1e1e1e;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+  }
+  /* Depth shading — older layers are darker */
+  .layer-age-8  {background:rgba(40,8,8,0.3)!important;}
+  .layer-age-14 {background:rgba(35,8,8,0.4)!important;}
+  .layer-age-20 {background:rgba(30,8,8,0.55)!important;}
+  .layer-age-now{background:rgba(20,5,5,0.7)!important;}
+  .layer-core   {background:rgba(50,10,10,0.8)!important;border-left:3px solid #c0392b;}
+  .arch-age{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;color:rgba(255,255,255,0.25)!important;
+    line-height:1;
+  }
+  .layer-core .arch-age{color:#c0392b!important;}
+  .arch-era-label{
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.2)!important;margin-top:4px;
+  }
+  .arch-finds{
+    flex:1;
+    padding:16px 22px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+  }
+  .arch-tag{
+    font-size:12px;padding:4px 12px;border-radius:2px;
+    font-weight:500;
+  }
+  /* Tags fade in opacity based on layer depth */
+  .layer-age-8  .arch-tag{background:rgba(255,255,255,0.05)!important;color:rgba(255,255,255,0.3)!important;border:1px solid rgba(255,255,255,0.07);}
+  .layer-age-14 .arch-tag{background:rgba(255,255,255,0.06)!important;color:rgba(255,255,255,0.4)!important;border:1px solid rgba(255,255,255,0.09);}
+  .layer-age-20 .arch-tag{background:rgba(255,255,255,0.07)!important;color:rgba(255,255,255,0.55)!important;border:1px solid rgba(255,255,255,0.12);}
+  .layer-age-now .arch-tag{background:rgba(255,255,255,0.08)!important;color:rgba(255,255,255,0.7)!important;border:1px solid rgba(255,255,255,0.15);}
+  .layer-core .arch-tag{background:rgba(192,57,43,0.2)!important;color:#e74c3c!important;border:1px solid rgba(192,57,43,0.35);}
+  .arch-instruction{
+    padding:16px 22px;
+    font-size:12px;
+    color:rgba(255,255,255,0.25)!important;
+    border-top:1px solid #161616;
+    font-style:italic;
+    background:#0a0a0a!important;
+  }
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px,7vw,72px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:660px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .myth-badge,.reality-badge{min-width:52px;padding:14px 12px;}
+    .signal-header div:last-child,.signal-cell:last-child{display:none;}
+    .signal-header,.signal-row{grid-template-columns:140px 1fr;}
+    .arch-era{width:90px;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .hero::after{font-size:130px;}
+  }
+
+/* ══════════ the-attention-economy.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 50% 45%, #3a0a0a 0%, #1a0505 42%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    min-height:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  /* Signal wave lines — horizontal scan lines suggesting signal interference */
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,transparent 3px,
+        rgba(192,57,43,0.018) 3px,
+        rgba(192,57,43,0.018) 4px
+      );
+    pointer-events:none;
+    animation: scan 8s linear infinite;
+  }
+  @keyframes scan{
+    0%{background-position:0 0;}
+    100%{background-position:0 40px;}
+  }
+  /* Eye watermark */
+  .hero::after{
+    content:'◉';
+    position:absolute;
+    font-size:380px;
+    color:rgba(192,57,43,0.035)!important;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    user-select:none;
+    line-height:1;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(48px,9vw,100px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE ────────────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE HARVEST LEDGER ──────── */
+  /* What each platform extracts, its mechanism, and the actual cost to you */
+  .harvest-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .harvest-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .harvest-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .harvest-header{
+    display:grid;
+    grid-template-columns:140px 1fr 1fr 1fr;
+    background:#151515!important;
+    border-bottom:1px solid #252525;
+  }
+  .harvest-header div{
+    padding:12px 16px;
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-right:1px solid #1e1e1e;
+  }
+  .harvest-header div:last-child{border-right:none;}
+  .harvest-row{
+    display:grid;
+    grid-template-columns:140px 1fr 1fr 1fr;
+    border-bottom:1px solid #161616;
+  }
+  .harvest-row:last-child{border-bottom:none;}
+  .harvest-row:nth-child(odd){background:#0f0f0f!important;}
+  .harvest-row:nth-child(even){background:#111111!important;}
+  .harvest-cell{
+    padding:14px 16px;font-size:13px;line-height:1.55;
+    border-right:1px solid #161616;
+    color:rgba(255,255,255,0.65)!important;
+  }
+  .harvest-cell:last-child{border-right:none;}
+  .harvest-cell.platform{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:1px;
+    color:rgba(255,255,255,0.85)!important;
+    display:flex;align-items:center;
+  }
+  .harvest-cell.mechanism{
+    font-size:12px;
+    color:rgba(255,100,80,0.8)!important;
+    font-style:italic;
+  }
+  .harvest-cell.cost{
+    font-size:12px;
+    color:rgba(255,200,100,0.7)!important;
+  }
+
+  /* ─── UNIQUE ELEMENT 2: THE ATTENTION DEPTH SPECTRUM ─ */
+  /* A vertical spectrum showing four depths of attention and what each produces */
+  .depth-wrap{
+    margin:44px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .depth-header-row{
+    grid-column:1/-1;
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .depth-header-row span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .depth-card{
+    padding:26px 22px;
+    position:relative;
+    overflow:hidden;
+  }
+  /* Four depth levels, colour-coded by quality */
+  .depth-fragmented{background:#0f0f0f!important;border-bottom:1px solid #161616;}
+  .depth-skimming{background:#100d08!important;border-bottom:1px solid #161616;}
+  .depth-engaged{background:#080f08!important;border-bottom:1px solid #161616;}
+  .depth-deep{background:#080808!important;border-left:3px solid #c0392b;}
+  .depth-level{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:13px;letter-spacing:3px;text-transform:uppercase;
+    margin-bottom:10px;display:block;
+  }
+  .depth-fragmented .depth-level{color:rgba(255,255,255,0.2)!important;}
+  .depth-skimming   .depth-level{color:rgba(200,130,50,0.5)!important;}
+  .depth-engaged    .depth-level{color:rgba(100,180,100,0.6)!important;}
+  .depth-deep       .depth-level{color:#e74c3c!important;}
+  .depth-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:26px;letter-spacing:1px;
+    margin-bottom:10px;line-height:1.1;
+  }
+  .depth-fragmented .depth-name{color:rgba(255,255,255,0.3)!important;}
+  .depth-skimming   .depth-name{color:rgba(255,200,100,0.6)!important;}
+  .depth-engaged    .depth-name{color:rgba(120,220,120,0.7)!important;}
+  .depth-deep       .depth-name{color:#ffffff!important;}
+  .depth-desc{
+    font-size:13px;color:rgba(255,255,255,0.55)!important;
+    line-height:1.6;margin-bottom:12px;
+  }
+  .depth-deep .depth-desc{color:rgba(255,255,255,0.75)!important;}
+  .depth-produces{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    padding:4px 10px;border-radius:2px;display:inline-block;
+    font-weight:700;margin-top:4px;
+  }
+  .depth-fragmented .depth-produces{background:rgba(255,255,255,0.04)!important;color:rgba(255,255,255,0.2)!important;}
+  .depth-skimming   .depth-produces{background:rgba(200,130,50,0.1)!important;color:rgba(200,130,50,0.5)!important;}
+  .depth-engaged    .depth-produces{background:rgba(100,180,100,0.1)!important;color:rgba(100,180,100,0.6)!important;}
+  .depth-deep       .depth-produces{background:rgba(192,57,43,0.15)!important;color:#e74c3c!important;}
+  /* Daily time estimate badge */
+  .depth-time{
+    position:absolute;top:18px;right:16px;
+    font-family:'Bebas Neue',sans-serif;font-size:28px;
+    line-height:1;
+  }
+  .depth-fragmented .depth-time{color:rgba(255,255,255,0.08)!important;}
+  .depth-skimming   .depth-time{color:rgba(200,130,50,0.15)!important;}
+  .depth-engaged    .depth-time{color:rgba(100,180,100,0.15)!important;}
+  .depth-deep       .depth-time{color:rgba(192,57,43,0.2)!important;}
+
+  /* ─── UNIQUE ELEMENT 3: THE ATTENTION BUDGET ────── */
+  /* A 24-hour budget visualised as blocks — showing default allocation vs intentional */
+  .budget-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .budget-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .budget-title span{
+    display:block;font-size:11px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .budget-body{padding:28px 24px 20px;}
+  .budget-row{margin-bottom:24px;}
+  .budget-row-label{
+    font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.35)!important;margin-bottom:10px;display:block;
+  }
+  .budget-blocks{
+    display:flex;gap:2px;flex-wrap:wrap;
+  }
+  .block{
+    width:28px;height:28px;
+    border-radius:2px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:8px;font-weight:700;letter-spacing:0.5px;
+    color:rgba(0,0,0,0.5)!important;
+    flex-shrink:0;
+    position:relative;
+  }
+  /* Block types */
+  .b-sleep    {background:#1a2a3a!important;}
+  .b-deep     {background:#c0392b!important;}
+  .b-engaged  {background:#27ae60!important;}
+  .b-fragmented{background:#8b6914!important;}
+  .b-harvest  {background:#2a2a2a!important;border:1px solid #1e1e1e;}
+  .b-admin    {background:#1a1a2a!important;}
+  .b-lost     {background:#1a0505!important;border:1px solid #2a0808;}
+  .budget-legend{
+    display:flex;flex-wrap:wrap;gap:14px;
+    margin-top:16px;padding-top:16px;
+    border-top:1px solid #161616;
+  }
+  .legend-item{display:flex;align-items:center;gap:6px;}
+  .legend-block{width:14px;height:14px;border-radius:2px;flex-shrink:0;}
+  .legend-label{font-size:11px;color:rgba(255,255,255,0.4)!important;letter-spacing:0.5px;}
+  .budget-note{
+    margin-top:16px;
+    font-size:12px;font-style:italic;
+    color:rgba(255,255,255,0.2)!important;
+    line-height:1.5;
+  }
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(34px,6.5vw,68px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:660px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .harvest-header div:nth-child(3),.harvest-cell:nth-child(3){display:none;}
+    .harvest-header,.harvest-row{grid-template-columns:120px 1fr 1fr;}
+    .depth-wrap{grid-template-columns:1fr;}
+    .block{width:22px;height:22px;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .hero::after{font-size:200px;}
+  }
+
+/* ══════════ the-body-isnt-the-project.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 35% 55%, #3a0a0a 0%, #1a0505 42%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,transparent 40px,
+        rgba(255,255,255,0.008) 40px,
+        rgba(255,255,255,0.008) 41px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,transparent 40px,
+        rgba(255,255,255,0.006) 40px,
+        rgba(255,255,255,0.006) 41px
+      );
+    pointer-events:none;
+  }
+  /* Subtle pulse rings in hero */
+  .hero::after{
+    content:'';
+    position:absolute;
+    width:600px;height:600px;
+    border-radius:50%;
+    border:1px solid rgba(192,57,43,0.06);
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    box-shadow:
+      0 0 0 60px rgba(192,57,43,0.04),
+      0 0 0 120px rgba(192,57,43,0.025),
+      0 0 0 200px rgba(192,57,43,0.01);
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(58px,11vw,118px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── STEPS ─────────────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE RENOVATION vs MAINTENANCE SPLIT ── */
+  /* Two-column contrast: how each mental model plays out across 12 months */
+  .model-split{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .model-split-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .model-split-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .model-cols{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .model-col-header{
+    padding:14px 22px;
+    font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    border-bottom:2px solid;
+    border-right:1px solid #161616;
+  }
+  .model-col-header.renovation{
+    background:#0f0f0f!important;
+    color:rgba(255,255,255,0.35)!important;
+    border-color:#2a2a2a;
+  }
+  .model-col-header.maintenance{
+    background:#100808!important;
+    color:#e74c3c!important;
+    border-color:#c0392b;
+  }
+  .model-row{
+    display:contents;
+  }
+  .model-cell{
+    padding:14px 22px;
+    font-size:13px;
+    line-height:1.6;
+    border-bottom:1px solid #161616;
+    border-right:1px solid #161616;
+    position:relative;
+  }
+  .model-cell:nth-child(even){border-right:none;}
+  .model-cell.reno{
+    color:rgba(255,255,255,0.38)!important;
+    background:#0f0f0f!important;
+    font-style:italic;
+  }
+  .model-cell.maint{
+    color:rgba(255,255,255,0.82)!important;
+    background:#100808!important;
+  }
+  .month-tag{
+    display:block;
+    font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    margin-bottom:4px;
+    color:rgba(255,255,255,0.18)!important;
+  }
+  .month-tag.active{color:rgba(192,57,43,0.55)!important;}
+
+  /* ─── UNIQUE ELEMENT 2: THE MINIMUM VIABLE DOSE CHART ── */
+  /* Horizontal bars showing evidence-based minimum effective doses per health domain */
+  .mvd-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .mvd-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .mvd-title span{
+    display:block;font-size:11px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .mvd-row{
+    display:flex;align-items:center;
+    padding:16px 24px;gap:16px;
+    border-bottom:1px solid #161616;
+  }
+  .mvd-row:last-child{border-bottom:none;}
+  .mvd-domain{
+    font-size:13px;font-weight:600;
+    width:130px;flex-shrink:0;
+    color:rgba(255,255,255,0.7)!important;
+    line-height:1.3;
+  }
+  .mvd-track{
+    flex:1;
+    height:16px;
+    background:#161616!important;
+    border-radius:2px;
+    overflow:visible;
+    position:relative;
+  }
+  /* The fill showing minimum effective dose */
+  .mvd-fill{
+    height:100%;
+    border-radius:2px;
+    position:relative;
+  }
+  /* A marker line showing "what most people think is the minimum" */
+  .mvd-myth-marker{
+    position:absolute;
+    top:-4px;
+    width:2px;
+    height:24px;
+    background:rgba(255,255,255,0.15)!important;
+    border-radius:1px;
+  }
+  .mvd-myth-marker::after{
+    content:attr(data-label);
+    position:absolute;
+    top:-18px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:9px;
+    letter-spacing:1px;
+    color:rgba(255,255,255,0.2)!important;
+    white-space:nowrap;
+    text-transform:uppercase;
+  }
+  .fill-strength{background:linear-gradient(90deg,#8b0000,#c0392b)!important;}
+  .fill-cardio{background:linear-gradient(90deg,#8b4500,#c07020)!important;}
+  .fill-sleep{background:linear-gradient(90deg,#1a3a6a,#2a5aaa)!important;}
+  .fill-mobility{background:linear-gradient(90deg,#1a5a1a,#2a8a2a)!important;}
+  .fill-nutrition{background:linear-gradient(90deg,#5a1a5a,#8a2a8a)!important;}
+  .mvd-dose{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;
+    width:130px;flex-shrink:0;
+    text-align:left;
+    line-height:1.2;
+    color:rgba(255,255,255,0.7)!important;
+  }
+  .mvd-dose strong{
+    display:block;
+    font-size:22px;
+    color:#ffffff!important;
+  }
+  .mvd-note{
+    font-size:11px;
+    color:rgba(255,255,255,0.25)!important;
+    width:180px;flex-shrink:0;
+    line-height:1.45;
+    font-style:italic;
+  }
+
+  /* ─── UNIQUE ELEMENT 3: THE IDENTITY STAIRCASE ──── */
+  /* A visual showing 5 levels of health identity — from "I'm trying to get fit" to "I'm someone who moves" */
+  .staircase-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .staircase-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .staircase-title span{
+    display:block;font-size:11px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .staircase-body{
+    padding:28px 24px;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+  }
+  .stair{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:14px 18px;
+    border-radius:2px;
+    position:relative;
+  }
+  /* Each stair is indented progressively more */
+  .stair-1{margin-left:0;background:rgba(20,20,20,0.8)!important;}
+  .stair-2{margin-left:24px;background:rgba(25,10,10,0.8)!important;}
+  .stair-3{margin-left:48px;background:rgba(30,10,10,0.8)!important;}
+  .stair-4{margin-left:72px;background:rgba(40,12,12,0.8)!important;}
+  .stair-5{margin-left:96px;background:rgba(50,15,15,0.8)!important;border:1px solid rgba(192,57,43,0.2);}
+  .stair-level{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;
+    line-height:1;
+    flex-shrink:0;
+    width:36px;
+  }
+  .stair-1 .stair-level{color:rgba(255,255,255,0.2)!important;}
+  .stair-2 .stair-level{color:rgba(192,57,43,0.35)!important;}
+  .stair-3 .stair-level{color:rgba(192,57,43,0.55)!important;}
+  .stair-4 .stair-level{color:rgba(192,57,43,0.8)!important;}
+  .stair-5 .stair-level{color:#e74c3c!important;}
+  .stair-content{}
+  .stair-label{
+    font-size:14px;font-weight:700;
+    margin-bottom:3px;
+    line-height:1.2;
+  }
+  .stair-1 .stair-label{color:rgba(255,255,255,0.3)!important;}
+  .stair-2 .stair-label{color:rgba(255,255,255,0.45)!important;}
+  .stair-3 .stair-label{color:rgba(255,255,255,0.6)!important;}
+  .stair-4 .stair-label{color:rgba(255,255,255,0.8)!important;}
+  .stair-5 .stair-label{color:#ffffff!important;}
+  .stair-desc{
+    font-size:12px;
+    line-height:1.5;
+    color:rgba(255,255,255,0.35)!important;
+  }
+  .stair-5 .stair-desc{color:rgba(255,255,255,0.55)!important;}
+  .stair-driver{
+    margin-left:auto;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    padding:3px 10px;border-radius:2px;flex-shrink:0;
+    font-weight:700;
+  }
+  .driver-motivation{background:rgba(255,255,255,0.05)!important;color:rgba(255,255,255,0.2)!important;}
+  .driver-habit{background:rgba(130,60,0,0.2)!important;color:rgba(200,120,40,0.6)!important;}
+  .driver-system{background:rgba(60,0,80,0.2)!important;color:rgba(140,60,180,0.6)!important;}
+  .driver-identity{background:rgba(192,57,43,0.15)!important;color:#e74c3c!important;}
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px,7vw,72px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:660px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .model-cols{grid-template-columns:1fr;}
+    .model-col-header.renovation,.model-cell.reno{display:none;}
+    .mvd-note{display:none;}
+    .mvd-dose{width:100px;}
+    .mvd-domain{width:100px;}
+    .stair-2{margin-left:12px;}
+    .stair-3{margin-left:24px;}
+    .stair-4{margin-left:36px;}
+    .stair-5{margin-left:48px;}
+    .stair-driver{display:none;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+  }
+
+/* ══════════ the-decision-you-keep-not-making.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 45% 50%, #3a0a0a 0%, #1a0505 42%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  /* Hourglass watermark */
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        -60deg,
+        transparent,transparent 70px,
+        rgba(255,255,255,0.009) 70px,
+        rgba(255,255,255,0.009) 71px
+      );
+    pointer-events:none;
+  }
+  .hero::after{
+    content:'?';
+    position:absolute;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:520px;
+    color:rgba(192,57,43,0.04)!important;
+    right:-60px;bottom:-120px;
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(56px,10.5vw,112px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE ────────────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE DECISION CORRUPTIONS ── */
+  /* Six conditions that corrupt good decision-making — diagnostic cards */
+  .corruptions-wrap{
+    margin:44px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .corruptions-header{
+    grid-column:1/-1;
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .corruptions-header span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .corruption-card{
+    background:#0f0f0f!important;
+    padding:24px 20px;
+    border-bottom:1px solid #161616;
+    position:relative;
+    overflow:hidden;
+  }
+  .corruption-card::before{
+    content:attr(data-num);
+    position:absolute;
+    top:10px;right:14px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:56px;
+    color:rgba(192,57,43,0.08)!important;
+    line-height:1;
+    pointer-events:none;
+  }
+  .corruption-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:21px;letter-spacing:1px;
+    color:#ffffff!important;
+    margin-bottom:6px;line-height:1.1;
+  }
+  .corruption-signal{
+    font-size:11px;font-weight:700;letter-spacing:1.5px;
+    text-transform:uppercase;color:#c0392b!important;
+    margin-bottom:10px;display:block;
+  }
+  .corruption-desc{
+    font-size:13px;color:rgba(255,255,255,0.6)!important;
+    line-height:1.6;margin:0;
+  }
+  .corruption-fix{
+    display:inline-block;
+    margin-top:12px;
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-top:1px solid #1e1e1e;
+    padding-top:10px;width:100%;
+  }
+  .corruption-fix strong{color:rgba(255,200,100,0.6)!important;}
+
+  /* ─── UNIQUE ELEMENT 2: THE REGRET ASYMMETRY TABLE ── */
+  /* Based on Jeff Bezos's regret minimisation — shows how the maths of regret actually works */
+  .regret-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .regret-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .regret-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .regret-header{
+    display:grid;
+    grid-template-columns:1fr 100px 100px 1fr;
+    background:#151515!important;
+    border-bottom:1px solid #252525;
+  }
+  .regret-header div{
+    padding:12px 16px;
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-right:1px solid #1e1e1e;
+  }
+  .regret-header div:last-child{border-right:none;}
+  .regret-row{
+    display:grid;
+    grid-template-columns:1fr 100px 100px 1fr;
+    border-bottom:1px solid #161616;
+  }
+  .regret-row:last-child{border-bottom:none;}
+  .regret-cell{
+    padding:14px 16px;font-size:13px;line-height:1.55;
+    border-right:1px solid #161616;color:rgba(255,255,255,0.65)!important;
+  }
+  .regret-cell:last-child{border-right:none;}
+  .regret-cell.scenario{font-style:italic;color:rgba(255,255,255,0.5)!important;}
+  .regret-cell.action-cost{
+    text-align:center;font-weight:700;font-family:'Bebas Neue',sans-serif;
+    font-size:20px;color:#e74c3c!important;
+  }
+  .regret-cell.inaction-cost{
+    text-align:center;font-weight:700;font-family:'Bebas Neue',sans-serif;
+    font-size:20px;color:#888!important;
+  }
+  .regret-cell.verdict{
+    font-size:12px;font-weight:600;
+    color:rgba(255,255,255,0.8)!important;
+  }
+  .regret-note{
+    padding:14px 20px;
+    font-size:12px;font-style:italic;
+    color:rgba(255,255,255,0.25)!important;
+    border-top:1px solid #161616;
+    background:#0a0a0a!important;
+  }
+
+  /* ─── UNIQUE ELEMENT 3: THE DECISION QUALITY MATRIX ── */
+  /* 2x2: Decision quality vs Outcome quality — the four quadrants */
+  .dq-wrap{
+    margin:44px 0;
+  }
+  .dq-title{
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:2px;color:#e74c3c!important;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .dq-sub{
+    font-size:12px;color:rgba(255,255,255,0.3)!important;
+    margin-bottom:20px;letter-spacing:0.5px;
+  }
+  .dq-outer{
+    display:grid;
+    grid-template-columns:36px 1fr;
+    grid-template-rows:1fr 36px;
+    gap:4px;
+  }
+  .dq-y-label{
+    grid-row:1;grid-column:1;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .dq-grid{
+    grid-row:1;grid-column:2;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+  }
+  .dq-x-label{
+    grid-row:2;grid-column:2;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .dq-cell{
+    padding:22px 20px;
+    min-height:150px;
+    position:relative;
+  }
+  /* Four quadrant styles */
+  .dq-a{background:#1a0a0a!important;border:1px solid #2a1010;}  /* Bad process, bad outcome */
+  .dq-b{background:#0a1a0a!important;border:1px solid #102a10;}  /* Good process, bad outcome */
+  .dq-c{background:#1a1505!important;border:1px solid #2a2010;}  /* Bad process, good outcome */
+  .dq-d{background:#0a1a0a!important;border:1px solid #1a4a1a;}  /* Good process, good outcome */
+  .dq-qlabel{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;letter-spacing:1px;
+    margin-bottom:8px;line-height:1;
+  }
+  .dq-a .dq-qlabel{color:#8b3030!important;}
+  .dq-b .dq-qlabel{color:#27ae60!important;}
+  .dq-c .dq-qlabel{color:#c09020!important;}
+  .dq-d .dq-qlabel{color:#2ecc71!important;}
+  .dq-desc{font-size:12px;color:rgba(255,255,255,0.5)!important;line-height:1.55;}
+  .dq-lesson{
+    display:inline-block;
+    margin-top:12px;font-size:10px;letter-spacing:1.5px;
+    text-transform:uppercase;font-weight:700;
+    padding:3px 8px;border-radius:2px;
+  }
+  .dq-a .dq-lesson{background:rgba(139,48,48,0.15)!important;color:#c05050!important;}
+  .dq-b .dq-lesson{background:rgba(39,174,96,0.1)!important;color:#27ae60!important;}
+  .dq-c .dq-lesson{background:rgba(192,144,32,0.12)!important;color:#c09020!important;}
+  .dq-d .dq-lesson{background:rgba(46,204,113,0.1)!important;color:#2ecc71!important;}
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px,7vw,72px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:660px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .corruptions-wrap{grid-template-columns:1fr;}
+    .corruptions-header{grid-column:1/-1;}
+    .regret-header div:last-child,.regret-cell:last-child{display:none;}
+    .regret-header,.regret-row{grid-template-columns:1fr 80px 80px;}
+    .dq-outer{grid-template-columns:20px 1fr;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .hero::after{font-size:280px;right:-30px;bottom:-60px;}
+  }
+
+/* ══════════ the-discomfort-dividend.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background: radial-gradient(ellipse at 60% 40%, #3a0a0a 0%, #1a0505 45%, #0a0a0a 100%)!important;
+    padding: 80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 48px,
+        rgba(255,255,255,0.015) 48px,
+        rgba(255,255,255,0.015) 49px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 48px,
+        rgba(255,255,255,0.015) 48px,
+        rgba(255,255,255,0.015) 49px
+      );
+    pointer-events:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    padding:6px 16px;
+    border-radius:2px;
+    margin-bottom:28px;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,14vw,130px);
+    line-height:0.88;
+    color:#ffffff!important;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:28px;
+    position:relative;
+    z-index:1;
+  }
+  .hero-title span{
+    color:#c0392b!important;
+    display:block;
+  }
+  .hero-subtitle{
+    font-size:18px;
+    font-weight:300;
+    color:#ffffff!important;
+    max-width:660px;
+    margin:0 auto 32px;
+    line-height:1.6;
+    opacity:0.92;
+  }
+  .hero-byline{
+    font-size:13px;
+    letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;
+    text-transform:uppercase;
+  }
+  .hero-byline strong{
+    color:rgba(255,255,255,0.75)!important;
+    font-weight:600;
+  }
+  .hero-divider{
+    width:60px;
+    height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;
+    border-radius:2px;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;
+    border-bottom:1px solid #1e1e1e;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:0;
+  }
+  .stat-item{
+    padding:28px 40px;
+    text-align:center;
+    border-right:1px solid #1e1e1e;
+    flex:1;
+    min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:42px;
+    color:#c0392b!important;
+    line-height:1;
+    display:block;
+  }
+  .stat-label{
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;
+    margin-top:6px;
+    display:block;
+  }
+
+  /* ─── BODY ──────────────────────────────────────── */
+  .article{
+    max-width:780px;
+    margin:0 auto;
+    padding:64px 24px 80px;
+  }
+  p{
+    color:#ffffff!important;
+    margin-bottom:24px;
+    font-size:17px;
+    line-height:1.8;
+  }
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:38px;
+    color:#ffffff!important;
+    letter-spacing:1.5px;
+    border-left:5px solid #c0392b;
+    padding-left:18px;
+    margin:52px 0 24px;
+    line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;
+    margin:40px 0;
+    padding:24px 28px;
+    background:rgba(192,57,43,0.07)!important;
+    position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';
+    font-family:'Bebas Neue',sans-serif;
+    font-size:120px;
+    color:#c0392b!important;
+    opacity:0.25;
+    position:absolute;
+    top:-20px;
+    left:12px;
+    line-height:1;
+    pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;
+    font-weight:500;
+    color:#ffffff!important;
+    font-style:italic;
+    line-height:1.5;
+    margin:0;
+    position:relative;
+    z-index:1;
+  }
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);
+    border-top:3px solid #c0392b;
+    padding:28px 32px;
+    margin:36px 0;
+    border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;
+    color:#e74c3c!important;
+    letter-spacing:1px;
+    margin-bottom:14px;
+  }
+  .highlight-box p{
+    font-size:15px;
+    color:rgba(255,255,255,0.85)!important;
+    margin-bottom:10px;
+  }
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{
+    display:flex;
+    gap:20px;
+    margin-bottom:24px;
+    align-items:flex-start;
+  }
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;
+    color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:2px;
+    flex-shrink:0;
+  }
+  .step-content h4{
+    font-size:16px;
+    font-weight:700;
+    color:#ffffff!important;
+    margin-bottom:6px;
+    letter-spacing:0.3px;
+  }
+  .step-content p{
+    font-size:15px;
+    color:rgba(255,255,255,0.8)!important;
+    margin-bottom:0;
+    line-height:1.65;
+  }
+
+  /* ─── UNIQUE ELEMENT: THE DISCOMFORT SPECTRUM ───── */
+  .spectrum-wrap{
+    margin:40px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .spectrum-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;
+    letter-spacing:2px;
+    color:#e74c3c!important;
+    text-transform:uppercase;
+  }
+  .spectrum-row{
+    display:flex;
+    align-items:center;
+    padding:0 24px;
+    border-bottom:1px solid #161616;
+    gap:16px;
+    min-height:64px;
+  }
+  .spectrum-row:last-child{border-bottom:none;}
+  .spectrum-label{
+    font-size:13px;
+    font-weight:600;
+    color:rgba(255,255,255,0.5)!important;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    width:120px;
+    flex-shrink:0;
+  }
+  .spectrum-bar-wrap{flex:1;display:flex;align-items:center;gap:12px;}
+  .spectrum-bar{
+    height:12px;
+    border-radius:2px;
+    position:relative;
+    transition:width 0.3s;
+  }
+  .bar-avoid  {background:linear-gradient(90deg,#444,#555)!important; width:15%;}
+  .bar-endure {background:linear-gradient(90deg,#8b4513,#c0612b)!important; width:35%;}
+  .bar-seek   {background:linear-gradient(90deg,#8b0000,#c0392b)!important; width:65%;}
+  .bar-design {background:linear-gradient(90deg,#c0392b,#e74c3c,#ff6b6b)!important; width:92%;}
+  .spectrum-value{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;
+    width:52px;
+    text-align:right;
+    flex-shrink:0;
+  }
+  .val-low  {color:rgba(255,255,255,0.3)!important;}
+  .val-mid  {color:#c0612b!important;}
+  .val-high {color:#e74c3c!important;}
+  .val-max  {color:#ff6b6b!important;}
+  .spectrum-desc{
+    font-size:12px;
+    color:rgba(255,255,255,0.35)!important;
+    width:200px;
+    flex-shrink:0;
+    text-align:right;
+    font-style:italic;
+  }
+
+  /* ─── UNIQUE ELEMENT: THE DIVIDEND LEDGER ────────── */
+  .ledger{
+    margin:40px 0;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .ledger-header{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background:#1a0505!important;
+    border-bottom:2px solid #c0392b;
+  }
+  .ledger-header div{
+    padding:14px 20px;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.5)!important;
+  }
+  .ledger-row{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    border-bottom:1px solid #161616;
+    background:#0f0f0f!important;
+  }
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-row:nth-child(even){background:#111111!important;}
+  .ledger-cell{
+    padding:16px 20px;
+    font-size:14px;
+    color:rgba(255,255,255,0.75)!important;
+    line-height:1.5;
+    border-right:1px solid #161616;
+  }
+  .ledger-cell:last-child{border-right:none;}
+  .ledger-cell.avoidance{color:rgba(255,255,255,0.35)!important;font-style:italic;}
+  .ledger-cell.discomfort{color:rgba(255,120,100,0.85)!important;font-weight:500;}
+  .ledger-cell.dividend{color:#e74c3c!important;font-weight:700;}
+  .ledger-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;
+    letter-spacing:2px;
+    color:#e74c3c!important;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;
+    padding:24px 28px;
+    margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:#e74c3c!important;
+    margin-bottom:10px;
+    display:block;
+  }
+  .science-box p{
+    font-size:14px;
+    color:rgba(255,255,255,0.75)!important;
+    margin-bottom:8px;
+    line-height:1.65;
+  }
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;
+    border-top:3px solid #e74c3c;
+    padding:32px;
+    margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:26px;
+    color:#ffffff!important;
+    letter-spacing:1px;
+    margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;
+    color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;
+    letter-spacing:0.5px;
+  }
+
+  /* ─── FULL-BLEED CALLOUT ────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;
+    padding:56px 48px;
+    text-align:center;
+    border-top:1px solid #2a0808;
+    border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(42px,8vw,80px);
+    color:#ffffff!important;
+    line-height:0.95;
+    letter-spacing:2px;
+    margin-bottom:20px;
+  }
+  .full-bleed .big-text em{
+    color:#c0392b!important;
+    font-style:normal;
+    display:block;
+  }
+  .full-bleed p{
+    font-size:17px;
+    color:rgba(255,255,255,0.65)!important;
+    max-width:560px;
+    margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;
+    padding:36px 24px;
+    max-width:780px;
+    margin:0 auto;
+  }
+  .post-footer .tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:20px;
+  }
+  .tag{
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;
+    border:1px solid #2a2a2a;
+    padding:4px 12px;
+    border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;
+    color:rgba(255,255,255,0.3)!important;
+    text-align:center;
+    padding:20px 0;
+    letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:640px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .spectrum-desc{display:none;}
+    .ledger-header div:last-child,.ledger-cell:last-child{display:none;}
+    .ledger-header,.ledger-row{grid-template-columns:1fr 1fr;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+  }
+
+/* ══════════ the-energy-audit.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 55% 35%, #3a0a0a 0%, #1a0505 45%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,transparent 56px,
+        rgba(255,255,255,0.011) 56px,
+        rgba(255,255,255,0.011) 57px
+      );
+    pointer-events:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,14vw,128px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE SIX DRAINS ─────────── */
+  /* Accordion-style cards, each drain gets its own panel */
+  .drains-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    margin:40px 0;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+  }
+  .drain-card{
+    background:#0f0f0f!important;
+    padding:28px 24px;
+    position:relative;
+    border-bottom:1px solid #161616;
+  }
+  .drain-card:nth-last-child(-n+2){border-bottom:none;}
+  .drain-number{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:64px;
+    line-height:1;
+    color:rgba(192,57,43,0.12)!important;
+    position:absolute;
+    top:16px;right:20px;
+    pointer-events:none;
+    user-select:none;
+  }
+  .drain-icon{
+    font-size:22px;
+    margin-bottom:12px;
+    display:block;
+  }
+  .drain-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;
+    color:#ffffff!important;
+    letter-spacing:1px;
+    margin-bottom:8px;
+    line-height:1.1;
+  }
+  .drain-signal{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:#c0392b!important;
+    margin-bottom:10px;
+    display:block;
+  }
+  .drain-desc{
+    font-size:13px;
+    color:rgba(255,255,255,0.6)!important;
+    line-height:1.6;
+    margin:0;
+  }
+  .drain-cost{
+    display:inline-block;
+    margin-top:12px;
+    font-size:11px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-top:1px solid #1e1e1e;
+    padding-top:10px;
+    width:100%;
+  }
+  .drain-cost strong{color:rgba(255,255,255,0.6)!important;}
+
+  /* ─── UNIQUE ELEMENT 2: THE ENERGY MAP ─────────── */
+  /* A horizontal capacity meter showing before/after each drain is sealed */
+  .energy-map{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .energy-map-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;
+    color:#e74c3c!important;
+  }
+  .energy-map-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .em-row{
+    display:flex;align-items:center;
+    padding:14px 24px;gap:16px;
+    border-bottom:1px solid #161616;
+  }
+  .em-row:last-child{border-bottom:none;}
+  .em-label{
+    font-size:13px;color:rgba(255,255,255,0.55)!important;
+    width:170px;flex-shrink:0;line-height:1.4;
+  }
+  .em-label strong{color:rgba(255,255,255,0.85)!important;display:block;margin-bottom:2px;}
+  .em-track{
+    flex:1;height:14px;background:#161616!important;
+    border-radius:2px;overflow:hidden;position:relative;
+  }
+  .em-fill{
+    height:100%;border-radius:2px;
+    position:relative;
+    transition:width 0.4s;
+  }
+  /* Capacity levels — colour shifts red → amber → green as you seal drains */
+  .fill-critical{
+    background:linear-gradient(90deg,#5a0000,#8b0000)!important;
+  }
+  .fill-low{
+    background:linear-gradient(90deg,#8b2500,#c0392b)!important;
+  }
+  .fill-mid{
+    background:linear-gradient(90deg,#8b5e00,#c08020)!important;
+  }
+  .fill-good{
+    background:linear-gradient(90deg,#1a6b1a,#27ae60)!important;
+  }
+  .fill-peak{
+    background:linear-gradient(90deg,#1a7a1a,#2ecc71,#a8f5a8)!important;
+  }
+  .em-pct{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;
+    width:52px;flex-shrink:0;text-align:right;
+  }
+  .pct-crit{color:#8b0000!important;}
+  .pct-low{color:#c0392b!important;}
+  .pct-mid{color:#c08020!important;}
+  .pct-good{color:#27ae60!important;}
+  .pct-peak{color:#2ecc71!important;}
+  .em-note{
+    font-size:11px;
+    color:rgba(255,255,255,0.25)!important;
+    width:140px;flex-shrink:0;text-align:right;
+    font-style:italic;
+    line-height:1.4;
+  }
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(40px,8vw,78px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:640px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .drains-grid{grid-template-columns:1fr;}
+    .drain-card:nth-last-child(-n+2){border-bottom:1px solid #161616;}
+    .drain-card:last-child{border-bottom:none;}
+    .em-note{display:none;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+  }
+
+/* ══════════ the-failure-tax.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 30% 55%, #3a0a0a 0%, #1a0505 45%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,transparent 72px,
+        rgba(255,255,255,0.013) 72px,
+        rgba(255,255,255,0.013) 73px
+      );
+    pointer-events:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,14vw,132px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE TAX RECEIPT ─────────── */
+  /* A stylised "receipt" for a famous failure — the cost paid vs the return earned */
+  .receipt-wrap{
+    margin:44px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+  }
+  .receipt-card{
+    background:#0f0f0f!important;
+    padding:26px 22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .receipt-card::after{
+    content:'';
+    position:absolute;bottom:0;left:0;right:0;
+    height:3px;
+    background:linear-gradient(90deg,transparent,#c0392b,transparent);
+    opacity:0.3;
+  }
+  .receipt-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;
+    color:#ffffff!important;
+    letter-spacing:1px;
+    margin-bottom:4px;
+    line-height:1.1;
+  }
+  .receipt-context{
+    font-size:11px;letter-spacing:1px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;margin-bottom:18px;display:block;
+  }
+  .receipt-line{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #161616;
+    gap:8px;
+  }
+  .receipt-line:last-of-type{border-bottom:none;}
+  .receipt-key{
+    font-size:11px;color:rgba(255,255,255,0.4)!important;
+    text-transform:uppercase;letter-spacing:1px;flex-shrink:0;
+  }
+  .receipt-val{
+    font-size:13px;font-weight:600;text-align:right;line-height:1.3;
+  }
+  .receipt-val.cost{color:#e74c3c!important;}
+  .receipt-val.win{color:#27ae60!important;}
+  .receipt-val.neutral{color:rgba(255,255,255,0.7)!important;}
+  .receipt-divider{
+    height:1px;background:#1e1e1e!important;margin:10px 0;
+  }
+  .receipt-header{
+    grid-column:1/-1;
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    padding:14px 22px;
+    border-bottom:2px solid #c0392b;
+  }
+  .receipt-header-title{
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:2px;color:#e74c3c!important;
+  }
+  .receipt-header-sub{
+    font-size:11px;color:rgba(255,255,255,0.3)!important;
+    letter-spacing:1px;text-transform:uppercase;margin-top:3px;
+  }
+
+  /* ─── UNIQUE ELEMENT 2: THE TWO FAILURE RESPONSES ── */
+  /* Side-by-side split: how Identity-attached vs Data-attached people process identical failure */
+  .split-wrap{
+    margin:44px 0;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .split-header{
+    padding:14px 22px;
+    font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    border-bottom:2px solid;
+  }
+  .split-header.threat{
+    background:#111111!important;
+    color:rgba(255,255,255,0.4)!important;
+    border-color:#333;
+  }
+  .split-header.data{
+    background:#1a0505!important;
+    color:#e74c3c!important;
+    border-color:#c0392b;
+  }
+  .split-title{
+    grid-column:1/-1;
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    padding:14px 22px;
+    border-bottom:1px solid #2a0808;
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:2px;color:#e74c3c!important;
+  }
+  .split-row{display:contents;}
+  .split-cell{
+    padding:14px 22px;
+    font-size:13px;line-height:1.55;
+    border-bottom:1px solid #161616;
+  }
+  .split-cell.threat-cell{
+    background:#0f0f0f!important;
+    color:rgba(255,255,255,0.4)!important;
+    font-style:italic;
+    text-decoration:none;
+  }
+  .split-cell.data-cell{
+    background:#100808!important;
+    color:rgba(255,255,255,0.8)!important;
+  }
+  .split-label{
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    font-style:normal;margin-bottom:4px;display:block;
+    color:rgba(255,255,255,0.2)!important;
+  }
+  .split-label.data-lbl{color:rgba(192,57,43,0.6)!important;}
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(40px,8vw,80px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:640px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .receipt-wrap{grid-template-columns:1fr;}
+    .receipt-header{grid-column:1/-1;}
+    .split-wrap{grid-template-columns:1fr;}
+    .split-header.threat,.split-cell.threat-cell{display:none;}
+    .split-title{font-size:15px;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+  }
+
+/* ══════════ the-money-story.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 50% 45%, #3a0a0a 0%, #1a0505 40%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        30deg,
+        transparent,transparent 80px,
+        rgba(255,255,255,0.01) 80px,
+        rgba(255,255,255,0.01) 81px
+      );
+    pointer-events:none;
+  }
+  /* Large faded £ watermark */
+  .hero::after{
+    content:'£';
+    position:absolute;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:480px;
+    color:rgba(192,57,43,0.04)!important;
+    right:-40px;
+    top:-60px;
+    line-height:1;
+    pointer-events:none;
+    user-select:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,14vw,132px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE MONEY ARCHETYPES ────── */
+  /* Five money archetypes as horizontal profile cards */
+  .archetypes-wrap{
+    margin:44px 0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .archetypes-header{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .archetypes-header span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .archetype-row{
+    display:grid;
+    grid-template-columns:180px 1fr 1fr 1fr;
+    background:#0f0f0f!important;
+    border-bottom:1px solid #161616;
+    min-height:80px;
+  }
+  .archetype-row:last-child{border-bottom:none;}
+  .archetype-row:nth-child(even){background:#111111!important;}
+  .arch-name-cell{
+    padding:20px 22px;
+    border-right:2px solid #1e1e1e;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .arch-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;
+    letter-spacing:1px;
+    line-height:1.1;
+    margin-bottom:4px;
+  }
+  .arch-tagline{
+    font-size:11px;
+    color:rgba(255,255,255,0.3)!important;
+    letter-spacing:0.5px;
+    font-style:italic;
+  }
+  .arch-cell{
+    padding:16px 18px;
+    font-size:13px;
+    line-height:1.55;
+    border-right:1px solid #161616;
+    color:rgba(255,255,255,0.65)!important;
+  }
+  .arch-cell:last-child{border-right:none;}
+  .arch-cell-label{
+    font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;margin-bottom:5px;display:block;
+  }
+  /* Archetype accent colours */
+  .arch-avoider .arch-name{color:#888!important;}
+  .arch-hoarder .arch-name{color:#8b6914!important;}
+  .arch-spender .arch-name{color:#c0392b!important;}
+  .arch-worrier .arch-name{color:#7a4a7a!important;}
+  .arch-builder .arch-name{color:#27ae60!important;}
+
+  /* ─── UNIQUE ELEMENT 2: THE BELIEF AUDIT LEDGER ─── */
+  /* A "find → examine → rewrite" table for inherited money beliefs */
+  .belief-ledger{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .belief-ledger-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .belief-ledger-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .belief-header{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    background:#151515!important;
+    border-bottom:1px solid #252525;
+  }
+  .belief-header div{
+    padding:12px 18px;
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    border-right:1px solid #1e1e1e;
+  }
+  .belief-header div:last-child{border-right:none;}
+  .belief-row{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    border-bottom:1px solid #161616;
+  }
+  .belief-row:last-child{border-bottom:none;}
+  .belief-cell{
+    padding:16px 18px;
+    font-size:13px;
+    line-height:1.6;
+    border-right:1px solid #161616;
+  }
+  .belief-cell:last-child{border-right:none;}
+  .belief-cell.inherited{
+    color:rgba(255,255,255,0.4)!important;
+    font-style:italic;
+  }
+  .belief-cell.cost{
+    color:#e74c3c!important;
+    font-size:12px;
+  }
+  .belief-cell.rewrite{
+    color:rgba(255,255,255,0.85)!important;
+    font-weight:500;
+  }
+
+  /* ─── UNIQUE ELEMENT 3: THE INCOME ILLUSION CHART ── */
+  /* A stacked bar showing why income alone doesn't fix money problems */
+  .illusion-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .illusion-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .illusion-title span{
+    display:block;font-size:11px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;letter-spacing:1px;
+  }
+  .illusion-body{padding:28px 24px;}
+  .illusion-row{
+    display:flex;align-items:center;
+    margin-bottom:18px;gap:14px;
+  }
+  .illusion-row:last-child{margin-bottom:0;}
+  .illusion-income{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:16px;
+    width:96px;
+    flex-shrink:0;
+    color:rgba(255,255,255,0.5)!important;
+    text-align:right;
+  }
+  .illusion-track{
+    flex:1;
+    height:28px;
+    background:#161616!important;
+    border-radius:2px;
+    overflow:hidden;
+    display:flex;
+    position:relative;
+  }
+  .illusion-seg{
+    height:100%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;font-weight:700;letter-spacing:1px;
+    white-space:nowrap;
+    overflow:hidden;
+  }
+  .seg-need{background:rgba(50,80,50,0.7)!important;color:rgba(255,255,255,0.5)!important;}
+  .seg-lifestyle{background:rgba(130,50,20,0.65)!important;color:rgba(255,200,180,0.7)!important;}
+  .seg-anxiety{background:rgba(80,20,20,0.7)!important;color:rgba(255,120,100,0.6)!important;}
+  .seg-free{background:rgba(192,57,43,0.85)!important;color:#fff!important;}
+  .illusion-note{
+    font-size:11px;
+    width:110px;
+    flex-shrink:0;
+    color:rgba(255,255,255,0.3)!important;
+    line-height:1.4;
+    font-style:italic;
+  }
+  .illusion-legend{
+    display:flex;flex-wrap:wrap;gap:16px;
+    padding:0 24px 20px;
+  }
+  .legend-item{
+    display:flex;align-items:center;gap:6px;
+    font-size:11px;color:rgba(255,255,255,0.4)!important;
+  }
+  .legend-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(38px,7.5vw,76px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:680px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .archetype-row{grid-template-columns:1fr;min-height:auto;}
+    .arch-name-cell{border-right:none;border-bottom:1px solid #1e1e1e;padding:14px 18px;}
+    .arch-cell{border-right:none;border-bottom:1px solid #161616;}
+    .arch-cell:last-child{border-bottom:none;}
+    .belief-header div:last-child,.belief-cell:last-child{display:none;}
+    .belief-header,.belief-row{grid-template-columns:1fr 1fr;}
+    .illusion-note{display:none;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .hero::after{font-size:260px;right:-20px;top:-20px;}
+  }
+
+/* ══════════ the-people-equation.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 65% 40%, #3a0a0a 0%, #1a0505 45%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        0deg,
+        transparent,transparent 64px,
+        rgba(255,255,255,0.012) 64px,
+        rgba(255,255,255,0.012) 65px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,transparent 64px,
+        rgba(255,255,255,0.009) 64px,
+        rgba(255,255,255,0.009) 65px
+      );
+    pointer-events:none;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:28px;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(68px,13vw,126px);
+    line-height:0.88;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE BODY ──────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  /* ─── SECTION HEADERS ───────────────────────────── */
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  /* ─── PULL QUOTE ────────────────────────────────── */
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  /* ─── SCIENCE BOX ───────────────────────────────── */
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  /* ─── HIGHLIGHT BOX ─────────────────────────────── */
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  /* ─── NUMBERED STEPS ────────────────────────────── */
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  /* ─── PROTOCOL BOX ──────────────────────────────── */
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE ORBIT MAP ──────────── */
+  /* Concentric ring diagram — SVG-based — showing proximity and influence weight */
+  .orbit-section{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .orbit-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:1px solid #2a0808;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .orbit-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .orbit-body{
+    display:flex;align-items:flex-start;gap:0;
+  }
+  .orbit-svg-wrap{
+    flex-shrink:0;
+    padding:32px 24px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .orbit-legend{
+    flex:1;
+    padding:24px 24px 24px 0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:0;
+  }
+  .orbit-legend-row{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid #161616;
+  }
+  .orbit-legend-row:last-child{border-bottom:none;}
+  .orbit-dot{
+    width:12px;height:12px;border-radius:50%;
+    flex-shrink:0;margin-top:4px;
+  }
+  .dot-core{background:#c0392b!important;}
+  .dot-inner{background:#8b5e00!important;}
+  .dot-mid{background:#2a6040!important;}
+  .dot-outer{background:#1a3a5c!important;}
+  .orbit-legend-label{
+    font-size:13px;font-weight:600;color:#ffffff!important;
+    margin-bottom:3px;
+  }
+  .orbit-legend-desc{
+    font-size:12px;color:rgba(255,255,255,0.45)!important;
+    line-height:1.5;
+  }
+
+  /* ─── UNIQUE ELEMENT 2: THE RELATIONSHIP AUDIT MATRIX ── */
+  /* A 2×2 grid: Energy Given vs Value Returned */
+  .matrix-wrap{
+    margin:44px 0;
+    position:relative;
+  }
+  .matrix-title{
+    font-family:'Bebas Neue',sans-serif;font-size:18px;
+    letter-spacing:2px;color:#e74c3c!important;
+    text-transform:uppercase;margin-bottom:6px;
+  }
+  .matrix-sub{
+    font-size:12px;color:rgba(255,255,255,0.3)!important;
+    margin-bottom:20px;letter-spacing:0.5px;
+  }
+  .matrix-outer{
+    display:grid;
+    grid-template-columns:36px 1fr;
+    grid-template-rows:1fr 36px;
+    gap:4px;
+  }
+  .matrix-y-label{
+    grid-row:1;grid-column:1;
+    writing-mode:vertical-rl;
+    transform:rotate(180deg);
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    display:flex;align-items:center;justify-content:center;
+    padding:4px 0;
+  }
+  .matrix-grid{
+    grid-row:1;grid-column:2;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:1fr 1fr;
+    gap:2px;
+    background:#161616!important;
+    border:1px solid #1e1e1e;
+  }
+  .matrix-x-label{
+    grid-row:2;grid-column:2;
+    font-size:10px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    display:flex;align-items:center;justify-content:center;
+    padding:4px 0;
+  }
+  .matrix-cell{
+    padding:20px 18px;
+    position:relative;
+    min-height:140px;
+  }
+  /* Quadrant colours */
+  .q-invest{background:#0a1a0a!important;border:1px solid #1a3a1a;}
+  .q-sacred{background:#1a0505!important;border:1px solid #3a0a0a;}
+  .q-audit{background:#111111!important;border:1px solid #1e1e1e;}
+  .q-exit{background:#0f0505!important;border:1px solid #2a1010;}
+  .q-label{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:20px;letter-spacing:1px;
+    margin-bottom:6px;line-height:1;
+  }
+  .q-invest .q-label{color:#27ae60!important;}
+  .q-sacred .q-label{color:#e74c3c!important;}
+  .q-audit .q-label{color:rgba(255,255,255,0.5)!important;}
+  .q-exit .q-label{color:#8b3030!important;}
+  .q-desc{
+    font-size:12px;color:rgba(255,255,255,0.5)!important;
+    line-height:1.5;
+  }
+  .q-action{
+    display:inline-block;
+    margin-top:10px;
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    font-weight:700;padding:3px 8px;border-radius:2px;
+  }
+  .q-invest .q-action{background:rgba(39,174,96,0.15)!important;color:#27ae60!important;}
+  .q-sacred .q-action{background:rgba(231,76,60,0.15)!important;color:#e74c3c!important;}
+  .q-audit .q-action{background:rgba(255,255,255,0.05)!important;color:rgba(255,255,255,0.4)!important;}
+  .q-exit .q-action{background:rgba(139,48,48,0.2)!important;color:#c05050!important;}
+  /* Axis arrows */
+  .axis-hi{
+    position:absolute;
+    font-size:9px;letter-spacing:1px;text-transform:uppercase;
+    color:rgba(255,255,255,0.2)!important;
+  }
+
+  /* ─── CONTAGION TABLE ────────────────────────────── */
+  .contagion-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    border-radius:3px;
+    overflow:hidden;
+  }
+  .contagion-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .contagion-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .contagion-row{
+    display:grid;
+    grid-template-columns:200px 1fr 1fr;
+    border-bottom:1px solid #161616;
+  }
+  .contagion-row:last-child{border-bottom:none;}
+  .contagion-row.header{
+    background:#151515!important;
+    border-bottom:1px solid #252525;
+  }
+  .contagion-cell{
+    padding:14px 20px;
+    font-size:13px;
+    color:rgba(255,255,255,0.7)!important;
+    border-right:1px solid #161616;
+    line-height:1.5;
+  }
+  .contagion-cell:last-child{border-right:none;}
+  .contagion-row.header .contagion-cell{
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.35)!important;
+  }
+  .contagion-cell.trait{
+    font-weight:600;color:rgba(255,255,255,0.9)!important;
+  }
+  .contagion-cell.absorb{color:#e74c3c!important;}
+  .contagion-cell.emit{color:#27ae60!important;}
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(38px,7.5vw,76px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:640px){
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .orbit-body{flex-direction:column;}
+    .orbit-svg-wrap{padding:24px;width:100%;}
+    .orbit-legend{padding:0 20px 20px;}
+    .matrix-outer{grid-template-columns:24px 1fr;}
+    .contagion-row{grid-template-columns:140px 1fr;}
+    .contagion-cell:last-child{display:none;}
+    .contagion-row.header .contagion-cell:last-child{display:none;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+  }
+
+/* ══════════ career-ceiling-part1.html ══════════ */
+
+  /* ─── BLOGGER CHROME KILL — hide nav/sidebar/header/title/footer ─── */
+  .navbar, #navbar, .navbar-inner, .nav-wrapper, #nav-wrapper,
+  #header, #header-wrapper, .header, .header-wrapper, .header-outer,
+  #header-inner, header, #Header1, .page-header, .blog-header,
+  #sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+  #sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+  #footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+  .blog-pager, #blog-pager, .breadcrumbs, .breadcrumb,
+  .post-title, h3.post-title, .post-header, .post-header-line-1,
+  .post-meta, .post-byline, .post-timestamp, .post-author,
+  .widget:not(.dlab-keep), .label-list,
+  #comments, .comment-form, .blog-feeds, .feed-links,
+  #attribution, .attribution, .page-title-bar, #page-title,
+  .post-share-buttons, .jump-link, .subscribe-box,
+  [class*="mega-menu"], [id*="mega-menu"] {
+    display:none!important;
+    visibility:hidden!important;
+    height:0!important;
+    max-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+    opacity:0!important;
+    pointer-events:none!important;
+  }
+  /* ─── BLOGGER WRAPPER BLEED FIX ─────────────────── */
+  html, body, div, section, article, p, h1, h2, h3, h4,
+  span, ul, li, blockquote, figure {
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+  }
+  #main-wrapper, #main, .main, #content, .content,
+  #page, .page, #container, .container,
+  .blog-content-container, #Blog1, .Blog,
+  .post-outer, .post, .post-inner, .post-body,
+  #outer-wrapper, #page-outer, #wrapper,
+  #content-wrapper, .region-inner {
+    background:#0a0a0a!important;
+    background-color:#0a0a0a!important;
+    color:#ffffff!important;
+    max-width:100%!important;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    background:#0a0a0a!important;
+    color:#ffffff!important;
+    font-family:'Inter',sans-serif;
+    font-size:17px;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ─── SERIES BANNER ─────────────────────────────── */
+  .series-banner{
+    background:#111111!important;
+    border-bottom:1px solid #1e1e1e;
+    padding:14px 48px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .series-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:11px;letter-spacing:4px;
+    color:rgba(255,255,255,0.35)!important;
+    text-transform:uppercase;
+  }
+  .series-divider{
+    width:1px;height:14px;
+    background:#2a2a2a;
+    flex-shrink:0;
+  }
+  .series-part{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    font-weight:700;color:#c0392b!important;
+  }
+  .series-nav{
+    margin-left:auto;
+    display:flex;
+    gap:6px;
+  }
+  .series-dot{
+    width:8px;height:8px;border-radius:50%;
+    background:#1e1e1e;
+    flex-shrink:0;
+  }
+  .series-dot.active{background:#c0392b!important;}
+  .series-dot.future{background:#161616;border:1px solid #1e1e1e;}
+
+  /* ─── HERO ─────────────────────────────────────── */
+  .hero{
+    background:radial-gradient(ellipse at 60% 35%, #3a0a0a 0%, #1a0505 40%, #0a0a0a 100%)!important;
+    padding:80px 24px 70px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  /* Architectural grid lines */
+  .hero::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(
+        90deg,
+        transparent,transparent 119px,
+        rgba(255,255,255,0.012) 119px,
+        rgba(255,255,255,0.012) 120px
+      ),
+      repeating-linear-gradient(
+        0deg,
+        transparent,transparent 79px,
+        rgba(255,255,255,0.008) 79px,
+        rgba(255,255,255,0.008) 80px
+      );
+    pointer-events:none;
+  }
+  /* Building silhouette watermark */
+  .hero::after{
+    content:'▮';
+    position:absolute;
+    font-size:400px;
+    color:rgba(192,57,43,0.04)!important;
+    bottom:-80px;right:-40px;
+    pointer-events:none;
+    user-select:none;
+    line-height:1;
+  }
+  .hero-series-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:24px;
+    position:relative;z-index:1;
+  }
+  .hero-series-tag .tag-line{width:28px;height:1px;background:#c0392b;}
+  .hero-series-tag .tag-text{
+    font-size:11px;font-weight:700;letter-spacing:3px;
+    text-transform:uppercase;color:#e74c3c!important;
+  }
+  .hero-category{
+    display:inline-block;
+    background:rgba(180,30,30,0.25);
+    border:1px solid rgba(200,50,50,0.4);
+    color:#ff6b6b!important;
+    font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    padding:6px 16px;border-radius:2px;margin-bottom:24px;
+    position:relative;z-index:1;
+  }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(72px,14vw,138px);
+    line-height:0.86;color:#ffffff!important;
+    letter-spacing:2px;text-transform:uppercase;
+    margin-bottom:28px;position:relative;z-index:1;
+  }
+  .hero-title span{color:#c0392b!important;display:block;}
+  .hero-subtitle{
+    font-size:18px;font-weight:300;color:#ffffff!important;
+    max-width:660px;margin:0 auto 32px;line-height:1.6;opacity:0.92;
+    position:relative;z-index:1;
+  }
+  .hero-byline{
+    font-size:13px;letter-spacing:1.5px;
+    color:rgba(255,255,255,0.5)!important;text-transform:uppercase;
+    position:relative;z-index:1;
+  }
+  .hero-byline strong{color:rgba(255,255,255,0.75)!important;font-weight:600;}
+  .hero-divider{
+    width:60px;height:3px;
+    background:linear-gradient(90deg,#c0392b,#e74c3c);
+    margin:28px auto 0;border-radius:2px;
+    position:relative;z-index:1;
+  }
+
+  /* ─── STAT BAR ──────────────────────────────────── */
+  .stat-bar{
+    background:#111111!important;
+    border-top:1px solid #1e1e1e;border-bottom:1px solid #1e1e1e;
+    display:flex;justify-content:center;flex-wrap:wrap;
+  }
+  .stat-item{
+    padding:28px 40px;text-align:center;
+    border-right:1px solid #1e1e1e;flex:1;min-width:160px;
+  }
+  .stat-item:last-child{border-right:none;}
+  .stat-number{
+    font-family:'Bebas Neue',sans-serif;font-size:42px;
+    color:#c0392b!important;line-height:1;display:block;
+  }
+  .stat-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;margin-top:6px;display:block;
+  }
+
+  /* ─── ARTICLE ────────────────────────────────────── */
+  .article{max-width:780px;margin:0 auto;padding:64px 24px 80px;}
+  p{color:#ffffff!important;margin-bottom:24px;font-size:17px;line-height:1.8;}
+  em{font-style:italic;}
+
+  .section-header{
+    font-family:'Bebas Neue',sans-serif;font-size:38px;
+    color:#ffffff!important;letter-spacing:1.5px;
+    border-left:5px solid #c0392b;padding-left:18px;
+    margin:52px 0 24px;line-height:1.1;
+  }
+
+  .pull-quote{
+    border-left:4px solid #c0392b;margin:40px 0;
+    padding:24px 28px;background:rgba(192,57,43,0.07)!important;position:relative;
+  }
+  .pull-quote::before{
+    content:'\201C';font-family:'Bebas Neue',sans-serif;font-size:120px;
+    color:#c0392b!important;opacity:0.25;position:absolute;
+    top:-20px;left:12px;line-height:1;pointer-events:none;
+  }
+  .pull-quote p{
+    font-size:22px!important;font-weight:500;color:#ffffff!important;
+    font-style:italic;line-height:1.5;margin:0;position:relative;z-index:1;
+  }
+
+  .science-box{
+    background:#0f0f0f!important;border:1px solid #1e1e1e;
+    border-left:4px solid #e74c3c;padding:24px 28px;margin:36px 0;
+    border-radius:0 2px 2px 0;
+  }
+  .science-box .science-tag{
+    font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+    color:#e74c3c!important;margin-bottom:10px;display:block;
+  }
+  .science-box p{font-size:14px;color:rgba(255,255,255,0.75)!important;margin-bottom:8px;line-height:1.65;}
+  .science-box p:last-child{margin-bottom:0;}
+  .science-box strong{color:rgba(255,255,255,0.95)!important;}
+
+  .highlight-box{
+    background:linear-gradient(135deg,#1a0505 0%,#2a0808 100%)!important;
+    border:1px solid rgba(192,57,43,0.3);border-top:3px solid #c0392b;
+    padding:28px 32px;margin:36px 0;border-radius:2px;
+  }
+  .highlight-box h3{
+    font-family:'Bebas Neue',sans-serif;font-size:22px;
+    color:#e74c3c!important;letter-spacing:1px;margin-bottom:14px;
+  }
+  .highlight-box p{font-size:15px;color:rgba(255,255,255,0.85)!important;margin-bottom:10px;}
+  .highlight-box p:last-child{margin-bottom:0;}
+
+  .steps-container{margin:36px 0;}
+  .step{display:flex;gap:20px;margin-bottom:24px;align-items:flex-start;}
+  .step-number{
+    font-family:'Bebas Neue',sans-serif;font-size:28px;color:#ffffff!important;
+    background:linear-gradient(135deg,#8b0000,#c0392b);
+    min-width:48px;height:48px;display:flex;align-items:center;
+    justify-content:center;border-radius:2px;flex-shrink:0;
+  }
+  .step-content h4{font-size:16px;font-weight:700;color:#ffffff!important;margin-bottom:6px;}
+  .step-content p{font-size:15px;color:rgba(255,255,255,0.8)!important;margin-bottom:0;line-height:1.65;}
+
+  .protocol{
+    background:linear-gradient(135deg,#0f0f0f,#141414)!important;
+    border:1px solid #2a0808;border-top:3px solid #e74c3c;
+    padding:32px;margin:40px 0;
+  }
+  .protocol h3{
+    font-family:'Bebas Neue',sans-serif;font-size:26px;
+    color:#ffffff!important;letter-spacing:1px;margin-bottom:8px;
+  }
+  .protocol .protocol-sub{
+    font-size:13px;color:rgba(255,255,255,0.4)!important;
+    margin-bottom:28px;letter-spacing:0.5px;
+  }
+
+  /* ─── UNIQUE ELEMENT 1: THE THREE CEILING TYPES ─── */
+  .ceiling-grid{
+    margin:44px 0;
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .ceiling-header{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .ceiling-header span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .ceiling-card{
+    display:grid;
+    grid-template-columns:200px 1fr 1fr;
+    background:#0f0f0f!important;
+    border-bottom:1px solid #161616;
+  }
+  .ceiling-card:last-child{border-bottom:none;}
+  .ceiling-card:nth-child(even){background:#111111!important;}
+  .ceiling-type{
+    padding:24px 22px;
+    border-right:2px solid #1e1e1e;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .ceiling-name{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:22px;letter-spacing:1px;
+    color:#ffffff!important;
+    line-height:1.1;margin-bottom:6px;
+  }
+  .ceiling-freq{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    font-weight:700;
+  }
+  .freq-common{color:#c0392b!important;}
+  .freq-medium{color:#c09020!important;}
+  .freq-rare{color:#27ae60!important;}
+  .ceiling-cell{
+    padding:20px 20px;
+    font-size:13px;line-height:1.6;
+    border-right:1px solid #161616;
+    color:rgba(255,255,255,0.65)!important;
+  }
+  .ceiling-cell:last-child{border-right:none;}
+  .ceiling-cell-label{
+    font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;margin-bottom:6px;display:block;
+  }
+
+  /* ─── UNIQUE ELEMENT 2: THE VISIBILITY EQUATION ─── */
+  /* The relationship between output, visibility, and career acceleration */
+  .equation-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .equation-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .equation-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .equation-body{
+    padding:40px 36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0;
+    flex-wrap:wrap;
+  }
+  .eq-term{
+    text-align:center;
+    padding:20px 28px;
+  }
+  .eq-value{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:52px;line-height:1;
+    display:block;
+    margin-bottom:8px;
+  }
+  .eq-label{
+    font-size:11px;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;
+    display:block;
+    max-width:120px;
+    line-height:1.4;
+  }
+  .ev-output{color:#ffffff!important;}
+  .ev-visibility{color:#c0392b!important;}
+  .ev-result{color:#27ae60!important;}
+  .eq-op{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:48px;
+    color:rgba(255,255,255,0.15)!important;
+    padding:0 8px;
+    flex-shrink:0;
+  }
+  .equation-note{
+    border-top:1px solid #161616;
+    padding:20px 36px;
+    font-size:13px;
+    color:rgba(255,255,255,0.45)!important;
+    line-height:1.65;
+    font-style:italic;
+  }
+  .equation-rows{
+    border-top:1px solid #161616;
+  }
+  .eq-row{
+    display:grid;
+    grid-template-columns:1fr 60px 60px 1fr;
+    border-bottom:1px solid #161616;
+    align-items:center;
+  }
+  .eq-row:last-child{border-bottom:none;}
+  .eq-row-cell{
+    padding:14px 20px;
+    font-size:13px;
+    border-right:1px solid #161616;
+    color:rgba(255,255,255,0.6)!important;
+    line-height:1.4;
+  }
+  .eq-row-cell:last-child{border-right:none;}
+  .eq-row-cell.score{
+    text-align:center;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;line-height:1;
+  }
+  .score-output{color:rgba(255,255,255,0.5)!important;}
+  .score-vis{color:#c0392b!important;}
+  .score-result-high{color:#27ae60!important;}
+  .score-result-med{color:#c09020!important;}
+  .score-result-low{color:#8b3030!important;}
+  .eq-row-header .eq-row-cell{
+    font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+    color:rgba(255,255,255,0.25)!important;
+    background:#151515!important;
+  }
+
+  /* ─── UNIQUE ELEMENT 3: THE CEILING AUDIT ──────── */
+  /* A diagnostic — 10 statements, each maps to a ceiling type */
+  .audit-wrap{
+    margin:44px 0;
+    background:#0f0f0f!important;
+    border:1px solid #1e1e1e;
+    overflow:hidden;
+  }
+  .audit-title{
+    background:linear-gradient(90deg,#1a0505,#2a0808)!important;
+    border-bottom:2px solid #c0392b;
+    padding:16px 24px;
+    font-family:'Bebas Neue',sans-serif;
+    font-size:18px;letter-spacing:2px;color:#e74c3c!important;
+  }
+  .audit-title span{
+    display:block;font-size:11px;letter-spacing:1px;
+    color:rgba(255,255,255,0.3)!important;font-family:'Inter',sans-serif;
+    font-weight:400;margin-top:4px;text-transform:uppercase;
+  }
+  .audit-statement{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    padding:16px 24px;
+    border-bottom:1px solid #161616;
+  }
+  .audit-statement:last-child{border-bottom:none;}
+  .audit-checkbox{
+    width:20px;height:20px;
+    border:1px solid #2a2a2a;
+    border-radius:2px;
+    flex-shrink:0;
+    margin-top:2px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .audit-text{
+    flex:1;
+    font-size:14px;color:rgba(255,255,255,0.7)!important;
+    line-height:1.55;
+  }
+  .audit-type{
+    font-size:10px;letter-spacing:1.5px;text-transform:uppercase;
+    font-weight:700;flex-shrink:0;
+    padding:2px 8px;border-radius:2px;margin-top:2px;
+  }
+  .type-skill{background:rgba(192,57,43,0.12)!important;color:#e74c3c!important;}
+  .type-visibility{background:rgba(192,144,32,0.12)!important;color:#c09020!important;}
+  .type-trust{background:rgba(39,174,96,0.1)!important;color:#27ae60!important;}
+  .audit-note{
+    padding:14px 24px;
+    background:#0a0a0a!important;
+    border-top:1px solid #161616;
+    font-size:12px;font-style:italic;
+    color:rgba(255,255,255,0.25)!important;
+  }
+
+  /* ─── FULL BLEED ────────────────────────────────── */
+  .full-bleed{
+    background:linear-gradient(135deg,#1a0505 0%,#0a0a0a 100%)!important;
+    margin:52px -24px;padding:56px 48px;text-align:center;
+    border-top:1px solid #2a0808;border-bottom:1px solid #2a0808;
+  }
+  .full-bleed .big-text{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:clamp(36px,7vw,72px);
+    color:#ffffff!important;line-height:0.92;
+    letter-spacing:2px;margin-bottom:20px;
+  }
+  .full-bleed .big-text em{color:#c0392b!important;font-style:normal;display:block;}
+  .full-bleed p{
+    font-size:17px;color:rgba(255,255,255,0.65)!important;
+    max-width:560px;margin:0 auto;
+  }
+
+  /* ─── SERIES NEXT ───────────────────────────────── */
+  .series-next{
+    border-top:1px solid #1e1e1e;
+    background:#111111!important;
+    padding:40px 48px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .series-next-label{
+    font-size:11px;letter-spacing:3px;text-transform:uppercase;
+    color:rgba(255,255,255,0.3)!important;
+    margin-bottom:8px;display:block;
+  }
+  .series-next-title{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:28px;letter-spacing:1px;
+    color:#ffffff!important;
+  }
+  .series-next-desc{
+    font-size:13px;color:rgba(255,255,255,0.45)!important;
+    margin-top:4px;
+    max-width:400px;
+  }
+  .series-next-arrow{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:48px;color:#c0392b!important;
+    line-height:1;flex-shrink:0;
+  }
+
+  /* ─── FOOTER ────────────────────────────────────── */
+  .post-footer{
+    border-top:1px solid #1e1e1e;padding:36px 24px;
+    max-width:780px;margin:0 auto;
+  }
+  .post-footer .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+  .tag{
+    font-size:11px;letter-spacing:1.5px;text-transform:uppercase;
+    color:rgba(255,255,255,0.4)!important;border:1px solid #2a2a2a;
+    padding:4px 12px;border-radius:2px;
+  }
+  .footer-byline{
+    font-size:13px;color:rgba(255,255,255,0.3)!important;
+    text-align:center;padding:20px 0;letter-spacing:0.5px;
+    border-top:1px solid #161616;
+  }
+  .footer-byline strong{color:rgba(255,255,255,0.5)!important;}
+
+  @media(max-width:660px){
+    .series-banner{padding:12px 16px;}
+    .stat-item{padding:20px 16px;min-width:120px;}
+    .stat-number{font-size:32px;}
+    .ceiling-card{grid-template-columns:1fr;}
+    .ceiling-type{border-right:none;border-bottom:1px solid #161616;}
+    .ceiling-cell{border-right:none;border-bottom:1px solid #161616;}
+    .ceiling-cell:last-child{border-bottom:none;}
+    .equation-body{gap:0;flex-direction:column;}
+    .eq-row{grid-template-columns:1fr 50px 50px;}
+    .eq-row-cell:last-child{display:none;}
+    .full-bleed{margin:40px -24px;padding:40px 24px;}
+    .series-next{padding:28px 24px;}
+  }
+
+/* ══════════ dlab-hub-v5 ══════════ */
+
+/* ═══════════════════════════════════════════════
+   BLOGGER CHROME NUCLEAR CSS KILL
+═══════════════════════════════════════════════ */
+html, body, div, section, header, footer, article,
+aside, main, nav, p, h1, h2, h3, h4, span, ul, li {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+}
+
+body > *:not(#dlab-hub-root),
+#header-wrapper, #header, .header, header, #Header1,
+.page-header, .blog-header, .header-outer, #header-inner,
+#sidebar, #sidebar-wrapper, .sidebar, .sidebar-wrapper,
+#sidebar-right, #sidebar-left, .sidebar-right, .sidebar-left,
+#footer, #footer-wrapper, .footer, .footer-wrapper, footer,
+.blog-pager, #blog-pager, .post-title, h3.post-title,
+.post-header, .post-header-line-1,
+.navbar, #navbar, .navbar-inner,
+.label-list, #comments, .comment-form, .blog-feeds, .feed-links,
+#attribution, .attribution, .page-title-bar, #page-title,
+.nav-wrapper, #nav-wrapper, .post-share-buttons,
+.blog-post-comments, .jump-link, .subscribe-box,
+[class*="credit"], [class*="template-credit"],
+[id*="credit"], [id*="template"] {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+html, body,
+#outer-wrapper, #page-outer, #wrapper,
+#content-wrapper, #main-wrapper, #main, .main,
+#blog-posts, .blog-posts, .post-outer, .post,
+.post-inner, .post-body, #content, .content,
+.region-inner, #page, .page, #container, .container,
+.blog-content-container, #Blog1, .Blog {
+  background: #0a0a0a !important;
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  float: none !important;
+}
+
+#dlab-hub-root {
+  display: block !important;
+  visibility: visible !important;
+  height: auto !important;
+  max-height: none !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: #0a0a0a !important;
+  color: #ffffff !important;
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL COMPONENT STYLES
+═══════════════════════════════════════════════ */
+#dlab-hub-root * { box-sizing: border-box; }
+
+#dlab-hub-root div, #dlab-hub-root span,
+#dlab-hub-root p, #dlab-hub-root h1, #dlab-hub-root h2,
+#dlab-hub-root h3, #dlab-hub-root h4,
+#dlab-hub-root ul, #dlab-hub-root li,
+#dlab-hub-root section, #dlab-hub-root article {
+  background-color: transparent !important;
+  color: inherit !important;
+}
+
+#dlab-hub-root {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* TOP BAR */
+.dh-topbar {
+  background: #0a0a0a !important;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 14px 20px;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+.dh-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 5px;
+  color: rgba(255,255,255,0.35) !important;
+  text-transform: uppercase;
+}
+.dh-brand b { color: #c0392b !important; font-weight: 400; }
+.dh-tag {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2) !important;
+}
+
+/* HERO */
+.dh-hero {
+  background:
+    radial-gradient(ellipse at 15% 85%, rgba(192,57,43,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 15%, rgba(80,10,10,0.18) 0%, transparent 50%),
+    #0a0a0a !important;
+  min-height: 100svh;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px 20px 52px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.dh-hero-topline {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #c0392b, #e74c3c, transparent) !important;
+}
+.dh-hero-grid {
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg,transparent,transparent 79px,rgba(255,255,255,0.014) 79px,rgba(255,255,255,0.014) 80px) !important;
+  pointer-events: none;
+}
+.dh-hero-bgnum {
+  position: absolute; top: 16px; right: 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 130px; line-height: 1;
+  color: rgba(255,255,255,0.035) !important;
+  user-select: none; pointer-events: none; z-index: 0;
+}
+.dh-eyebrow {
+  display: flex !important; align-items: center;
+  gap: 12px; margin-bottom: 20px;
+  position: relative; z-index: 1;
+}
+.dh-eyebrow-line {
+  width: 28px; height: 1px;
+  background: #c0392b !important; flex-shrink: 0;
+}
+.dh-eyebrow-text {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase;
+  color: #e74c3c !important;
+}
+.dh-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 12vw, 72px);
+  font-weight: 900; line-height: 0.92;
+  letter-spacing: -1px; color: #ffffff !important;
+  position: relative; z-index: 1; margin-bottom: 4px;
+}
+.dh-h1 em { font-style: italic; color: #c0392b !important; }
+.dh-h1 .ghost {
+  display: block;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.12);
+  color: transparent !important;
+  font-size: clamp(36px, 10vw, 60px);
+}
+.dh-hero-sub {
+  margin-top: 28px; font-size: 15px; font-weight: 300;
+  color: rgba(255,255,255,0.72) !important;
+  line-height: 1.75; border-left: 2px solid #c0392b;
+  padding-left: 16px; position: relative; z-index: 1;
+  max-width: 480px;
+}
+.dh-scroll {
+  margin-top: 40px; display: flex !important;
+  align-items: center; gap: 12px;
+  position: relative; z-index: 1;
+}
+.dh-scroll-line { width: 32px; height: 1px; background: rgba(255,255,255,0.15) !important; }
+.dh-scroll-text {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.25) !important;
+}
+
+/* TICKER */
+.dh-ticker {
+  background: #c0392b !important;
+  padding: 16px 0; overflow: hidden; white-space: nowrap; width: 100%;
+}
+.dh-ticker-inner {
+  display: inline-flex !important; gap: 40px;
+  animation: dh-tick 26s linear infinite;
+}
+@keyframes dh-tick {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.dh-ticker-inner span {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px; letter-spacing: 4px;
+  color: rgba(0,0,0,0.4) !important; flex-shrink: 0;
+}
+
+/* SECTIONS */
+.dh-sec {
+  background: #0a0a0a !important;
+  padding: 56px 20px; width: 100%;
+}
+.dh-sec-alt {
+  background: #0f0f0f !important;
+  border-top: 1px solid #1e1e1e; border-bottom: 1px solid #1e1e1e;
+  padding: 56px 20px; width: 100%;
+}
+.dh-inner { max-width: 860px; margin: 0 auto; width: 100%; }
+.dh-label {
+  display: flex !important; align-items: center;
+  gap: 12px; margin-bottom: 32px;
+}
+.dh-label-line { width: 24px; height: 1px; background: #c0392b !important; flex-shrink: 0; }
+.dh-label-text {
+  font-size: 10px; font-weight: 700; letter-spacing: 5px;
+  text-transform: uppercase; color: #e74c3c !important;
+}
+.dh-rule {
+  width: 100%; height: 1px;
+  background: linear-gradient(90deg, #c0392b, transparent) !important;
+  margin: 36px 0;
+}
+
+/* MISSION */
+.dh-mission-grid { width: 100%; }
+.dh-m-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 80px; line-height: 1;
+  color: rgba(255,255,255,0.04) !important; display: block; margin-bottom: -8px;
+}
+.dh-m-tag {
+  font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 5px;
+  color: #e74c3c !important; text-transform: uppercase; display: block; margin-bottom: 24px;
+}
+.dh-m-h {
+  font-family: 'Playfair Display', serif; font-size: clamp(24px,6vw,38px);
+  font-weight: 700; line-height: 1.2; color: #ffffff !important; margin-bottom: 20px;
+}
+.dh-m-h em { font-style: italic; color: #c0392b !important; }
+.dh-m-p {
+  font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.7) !important;
+  line-height: 1.8; margin-bottom: 16px;
+}
+.dh-m-p strong { color: #ffffff !important; font-weight: 500; }
+
+/* PILLARS */
+.dh-pillars {
+  display: grid !important; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: #1e1e1e !important; border: 1px solid #1e1e1e;
+}
+.dh-pillar {
+  background: #0f0f0f !important; padding: 20px 16px;
+  border-top: 2px solid transparent; transition: border-color 0.2s;
+}
+.dh-pillar-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 36px; line-height: 1;
+  color: rgba(255,255,255,0.04) !important; display: block; margin-bottom: 10px;
+}
+.dh-pillar-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: 16px; letter-spacing: 0.5px;
+  color: #ffffff !important; display: block; margin-bottom: 8px;
+}
+.dh-pillar-desc { font-size: 11px; color: rgba(255,255,255,0.38) !important; line-height: 1.55; }
+
+/* CATALOGUE */
+.dh-cat-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px,9vw,60px); font-weight: 900; line-height: 0.95;
+  color: #ffffff !important; margin-bottom: 48px;
+}
+.dh-cat-title em { font-style: italic; color: #c0392b !important; }
+.dh-group { margin-bottom: 52px; }
+.dh-group-hdr {
+  display: flex !important; align-items: center; gap: 12px;
+  padding-bottom: 12px; border-bottom: 1px solid #1e1e1e;
+}
+.dh-group-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 2px;
+  color: rgba(255,255,255,0.18) !important;
+}
+.dh-group-name {
+  font-family: 'Bebas Neue', sans-serif; font-size: 14px; letter-spacing: 3px;
+  color: #e74c3c !important; text-transform: uppercase; flex: 1;
+}
+.dh-group-ct {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.18) !important;
+}
+.dh-feat {
+  background: #0f0f0f !important; border: 1px solid #1e1e1e;
+  border-top: 2px solid #c0392b; padding: 22px 18px; margin-bottom: 2px;
+}
+.dh-feat-label {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: #c0392b !important; font-weight: 700; display: block; margin-bottom: 8px;
+}
+.dh-feat-title {
+  font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700;
+  color: #ffffff !important; line-height: 1.3; margin-bottom: 8px;
+}
+.dh-feat-desc { font-size: 13px; color: rgba(255,255,255,0.52) !important; line-height: 1.6; }
+.dh-essay {
+  display: flex !important; align-items: flex-start;
+  gap: 14px; padding: 16px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.dh-essay:last-child { border-bottom: none; }
+.dh-essay-num {
+  font-family: 'Bebas Neue', sans-serif; font-size: 20px;
+  color: rgba(255,255,255,0.12) !important; line-height: 1;
+  flex-shrink: 0; width: 30px; text-align: right; padding-top: 2px;
+}
+.dh-essay-body { flex: 1; }
+.dh-essay-title {
+  font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700;
+  color: #ffffff !important; line-height: 1.3; margin-bottom: 4px;
+}
+.dh-essay-desc { font-size: 12px; color: rgba(255,255,255,0.35) !important; line-height: 1.5; }
+.dh-essay-tag {
+  font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.18) !important; flex-shrink: 0; padding-top: 4px; display: none;
+}
+
+/* COMING */
+.dh-coming {
+  display: flex !important; flex-direction: column;
+  gap: 2px; background: #1e1e1e !important; border: 1px solid #1e1e1e;
+}
+.dh-coming-card {
+  background: #0f0f0f !important; padding: 22px 18px; position: relative;
+}
+.dh-coming-badge {
+  position: absolute; top: 14px; right: 14px;
+  font-family: 'Bebas Neue', sans-serif; font-size: 9px; letter-spacing: 2px;
+  color: rgba(255,255,255,0.15) !important; background: #141414 !important;
+  padding: 2px 7px; border-radius: 2px;
+}
+.dh-coming-series {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: #c0392b !important; font-weight: 700; display: block; margin-bottom: 8px;
+}
+.dh-coming-title {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700;
+  color: #ffffff !important; line-height: 1.3; margin-bottom: 8px;
+}
+.dh-coming-desc { font-size: 12px; color: rgba(255,255,255,0.42) !important; line-height: 1.55; }
+.dh-coming-tags { margin-top: 12px; display: flex !important; flex-wrap: wrap; gap: 6px; }
+.dh-coming-tag {
+  font-size: 10px; padding: 2px 8px;
+  border: 1px solid #252525; color: rgba(255,255,255,0.22) !important;
+  background: #0a0a0a !important; border-radius: 2px;
+}
+
+/* ABOUT */
+.dh-about-h {
+  font-family: 'Playfair Display', serif; font-size: clamp(28px,7vw,44px);
+  font-weight: 900; line-height: 1.1; color: #ffffff !important; margin-bottom: 20px;
+}
+.dh-about-h em { font-style: italic; color: #c0392b !important; }
+.dh-about-p {
+  font-size: 14px; color: rgba(255,255,255,0.6) !important;
+  line-height: 1.8; font-weight: 300; margin-bottom: 14px;
+}
+.dh-sig { margin-top: 24px; padding-top: 18px; border-top: 1px solid #1e1e1e; }
+.dh-sig-name { font-family: 'Playfair Display', serif; font-size: 20px; font-style: italic; color: #ffffff !important; }
+.dh-sig-role {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.22) !important; margin-top: 4px; display: block;
+}
+.dh-numbers {
+  display: grid !important; grid-template-columns: 1fr 1fr;
+  gap: 2px; background: #1e1e1e !important; border: 1px solid #1e1e1e; margin-top: 36px;
+}
+.dh-number { background: #0f0f0f !important; padding: 24px 16px; text-align: center; }
+.dh-number-val {
+  font-family: 'Bebas Neue', sans-serif; font-size: 44px; line-height: 1;
+  color: #c0392b !important; display: block;
+}
+.dh-number-label {
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.28) !important; margin-top: 6px; display: block; line-height: 1.4;
+}
+
+/* FOOTER */
+.dh-footer {
+  background: #0a0a0a !important; border-top: 1px solid #1e1e1e;
+  padding: 32px 20px; text-align: center;
+}
+.dh-footer-brand {
+  font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 5px;
+  color: rgba(255,255,255,0.18) !important; text-transform: uppercase; display: block; margin-bottom: 8px;
+}
+.dh-footer-copy { font-size: 11px; color: rgba(255,255,255,0.18) !important; display: block; margin-bottom: 4px; }
+
+/* TABLET 600px+ */
+@media (min-width:600px) {
+  .dh-topbar { padding: 16px 32px; }
+  .dh-hero { padding: 40px 40px 72px; }
+  .dh-hero-bgnum { font-size: 200px; }
+  .dh-h1 { font-size: clamp(56px,10vw,80px); }
+  .dh-sec, .dh-sec-alt { padding: 64px 40px; }
+  .dh-pillars { grid-template-columns: repeat(3,1fr); }
+  .dh-coming { flex-direction: unset !important; display: grid !important; grid-template-columns: 1fr 1fr; }
+  .dh-numbers { grid-template-columns: repeat(4,1fr); margin-top: 40px; }
+  .dh-essay-tag { display: block; }
+  .dh-footer { display: flex !important; justify-content: space-between; align-items: center; padding: 36px 40px; text-align: left; }
+  .dh-footer-brand, .dh-footer-copy { display: inline; margin-bottom: 0; }
+}
+
+/* DESKTOP 900px+ */
+@media (min-width:900px) {
+  .dh-topbar { padding: 18px 56px; }
+  .dh-hero { padding: 56px 80px 100px; min-height: 95vh; }
+  .dh-hero-bgnum { font-size: 260px; top: 32px; right: 56px; }
+  .dh-h1 { font-size: clamp(80px,9vw,118px); }
+  .dh-h1 .ghost { font-size: clamp(68px,8vw,100px); }
+  .dh-hero-sub { font-size: 18px; max-width: 560px; }
+  .dh-sec, .dh-sec-alt { padding: 96px 80px; }
+  .dh-inner { max-width: 960px; }
+  .dh-mission-grid { display: grid !important; grid-template-columns: 1fr 2fr; gap: 80px; align-items: start; }
+  .dh-m-sticky { position: sticky; top: 80px; }
+  .dh-m-num { font-size: 120px; }
+  .dh-m-h { font-size: clamp(28px,3vw,42px); }
+  .dh-m-p { font-size: 17px; }
+  .dh-essay { display: grid !important; grid-template-columns: 48px 1fr auto; gap: 20px; align-items: center; }
+  .dh-essay-num { width: auto; font-size: 24px; }
+  .dh-essay-tag { display: block; font-size: 10px; }
+  .dh-feat { padding: 28px 26px; }
+  .dh-feat-title { font-size: 24px; }
+  .dh-feat-desc { font-size: 14px; max-width: 560px; }
+  .dh-about-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .dh-numbers { margin-top: 0; }
+  .dh-about-h { font-size: clamp(32px,3.5vw,48px); }
+  .dh-pillars { grid-template-columns: repeat(6,1fr); }
+  .dh-footer { padding: 40px 80px; }
+  .dh-cat-title { font-size: clamp(52px,6vw,76px); }
+}
+
+/* WIDE 1200px+ */
+@media (min-width:1200px) {
+  .dh-inner { max-width: 1080px; }
+  .dh-hero { padding: 72px 96px 112px; }
+  .dh-h1 { font-size: clamp(100px,8.5vw,134px); }
+  .dh-sec, .dh-sec-alt { padding: 112px 96px; }
+  .dh-footer { padding: 40px 96px; }
+}
+
+/* HOVER desktop only */
+@media (hover:hover) {
+  .dh-pillar:hover { background: #141414 !important; border-top-color: #c0392b; }
+  .dh-essay:hover { background: rgba(192,57,43,0.05) !important; padding-left: 8px; transition: all 0.15s; }
+  .dh-essay:hover .dh-essay-title { color: #e74c3c !important; }
+  .dh-coming-card:hover { background: #111111 !important; }
+}
